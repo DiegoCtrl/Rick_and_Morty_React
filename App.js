@@ -24,15 +24,19 @@ export default function App() {
       <Text>Personagens</Text>
       <Button title='Mostre-me' onPress={mudarPersonagem} ></Button>
       <Text>clique no botão para mudar de personagem</Text>
+      
       <View>
        {personagem &&
-        <View>
-           <Image source={{
+        <View style={styles.card}>
+           <Image style={styles.img} source={{
             uri: personagem.image
-           }} style={{width:'300px', height:'300px'}} ></Image>
-           <Text>{personagem.name}</Text>
-           <Text>{personagem.species}</Text>
-           <Text>{personagem.origin.name}</Text>
+           }} ></Image>
+           <View>
+            <Text style={styles.name}>{personagem.name}</Text>
+            <Text style={styles.subtext}><Text style={styles.sub2text}>Specie:  </Text>{personagem.species}</Text>
+            <Text style={styles.subtext}><Text style={styles.sub2text}>Origem:  </Text>{personagem.origin.name}</Text>
+            <Text style={styles.sub3text}></Text>
+            </View>
         </View>
       }
       </View>
@@ -47,6 +51,38 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  img: {
+    width:300, 
+    height:300,
+    borderRadius:10,
+    padding: 0
+  },
+  name: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    paddingTop: 15.
+  },
+  subtext: {
+    fontSize: 15,
+    color: '#fff',
+  },
+  sub2text: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  sub3text: {
+    padding: 15,
+  },
+  card:{
+    flex: 1,
+    width: '100%',
+    height:400,
+    backgroundColor:'rgb(60, 62, 68)',
+    borderRadius:10,
+    alignItems:'center',
+  }
 });
 
 
