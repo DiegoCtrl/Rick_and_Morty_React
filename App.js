@@ -20,10 +20,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Rick and Morty</Text>
-      <Text>Personagens</Text>
-      <Button title='Mostre-me' onPress={mudarPersonagem} ></Button>
-      <Text>clique no botão para mudar de personagem</Text>
+      <Text style={styles.titulo}>Rick and Morty</Text>
+      <Text style={styles.titulosub}>Personagens</Text>
+      <Text style={styles.sub3text}></Text>
+      <Button title='Gerar personagem'color='green' onPress={mudarPersonagem}></Button>
+      <Text style={styles.sub3text}>clique no botão para mudar de personagem {'\n'}</Text>
       
       <View>
        {personagem &&
@@ -33,8 +34,8 @@ export default function App() {
            }} ></Image>
            <View>
             <Text style={styles.name}>{personagem.name}</Text>
-            <Text style={styles.subtext}><Text style={styles.sub2text}>Specie:  </Text>{personagem.species}</Text>
-            <Text style={styles.subtext}><Text style={styles.sub2text}>Origem:  </Text>{personagem.origin.name}</Text>
+            <Text style={styles.desc}><Text style={styles.sub2text}>Specie:  </Text>{personagem.species}</Text>
+            <Text style={styles.desc}><Text style={styles.sub2text}>Origem:  </Text>{personagem.origin.name}</Text>
             <Text style={styles.sub3text}></Text>
             </View>
         </View>
@@ -51,6 +52,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  titulo: {
+      fontSize: 50,
+      fontWeight: 'bold',
+      color: '#111',
+      paddingTop: 15.
+  },
+  titulosub: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#fff',
+    padding: 15,
+    borderRadius: 10,
+    backgroundColor: 'rgb(60, 62, 68)'
+},
   img: {
     width:300, 
     height:300,
@@ -63,7 +78,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     paddingTop: 15.
   },
-  subtext: {
+  desc: {
     fontSize: 15,
     color: '#fff',
   },
@@ -74,6 +89,8 @@ const styles = StyleSheet.create({
   },
   sub3text: {
     padding: 15,
+    fontWeight: 'bold',
+    color: '#000',
   },
   card:{
     flex: 1,

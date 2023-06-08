@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "motive",
-    "slug": "motive",
+    "name": "Personagens Rick and Morty",
+    "slug": "Personagens Rick and Morty",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
